@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.ViewFlipper;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +16,8 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class HomeFragment extends Fragment {
+    private ViewFlipper viewFlipper;
+    private ImageView s1, s2, s3, s4, s5, s6, s7, s8;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -59,6 +63,23 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+         View view= inflater.inflate(R.layout.fragment_home, container, false);
+         setFlipper(view);
+         return  view;
+    }
+
+    private void setFlipper(View view) {
+        viewFlipper = (ViewFlipper) view.findViewById(R.id.flipper1);
+        s1 = (ImageView)view. findViewById(R.id.s1);
+        s2 = (ImageView)view. findViewById(R.id.s2);
+        s3 = (ImageView)view. findViewById(R.id.s3);
+        s4 = (ImageView)view. findViewById(R.id.s4);
+        s5 = (ImageView) view.findViewById(R.id.s5);
+        s6 = (ImageView)view. findViewById(R.id.s6);
+
+        viewFlipper.setInAnimation(getActivity(), R.anim.slide_in_right);
+        viewFlipper.setOutAnimation(getActivity(), R.anim.slide_out_left);
+        viewFlipper.startFlipping();
+
     }
 }

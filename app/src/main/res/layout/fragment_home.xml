@@ -3,12 +3,114 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     tools:context=".HomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/vtop">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ViewFlipper
+                android:id="@+id/flipper1"
+                android:layout_width="fill_parent"
+                android:layout_height="240dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerInParent="true"
+                android:flipInterval="3000"
+                android:inAnimation="@anim/slide_in_right"
+                android:outAnimation="@anim/slide_out_left">
+
+                <ImageView
+                    android:id="@+id/s2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:contentDescription="img2"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img6" />
+
+                <ImageView
+                    android:id="@+id/s3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:contentDescription="img3"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img7" />
+
+                <ImageView
+                    android:id="@+id/s1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:contentDescription="img1"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img11" />
+
+                <ImageView
+                    android:id="@+id/s4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:contentDescription="img4"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img6" />
+
+                <ImageView
+                    android:id="@+id/s5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:contentDescription="img5"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img7" />
+
+                <ImageView
+                    android:id="@+id/s6"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:contentDescription="img6"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img11" />
+
+            </ViewFlipper>
+
+            <View
+                android:id="@+id/v1"
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:layout_below="@id/flipper1"
+                android:background="#fff" />
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                ads:cardCornerRadius="6dp"
+                ads:cardElevation="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/hello_blank_fragment" />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 
 </FrameLayout>
